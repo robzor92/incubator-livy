@@ -67,12 +67,12 @@ rebuild Livy.
 
 ## Building Livy
 
-Livy is built using [Apache Maven](http://maven.apache.org). To check out and build Livy, run:
+Livy is built using [Apache Maven](http://maven.apache.org). To check out and build Livy for Spark 2.3.0, run:
 
 ```
-git clone https://github.com/apache/incubator-livy.git
+git clone https://github.com/hopshadoop/incubator-livy.git
 cd livy
-mvn package
+mvn -Pspark-2.3 package
 ```
 
 By default Livy is built against Apache Spark 1.6.2, but the version of Spark used when running
@@ -80,3 +80,10 @@ Livy does not need to match the version used to build Livy. Livy internally uses
 mitigate the gaps between different Spark versions, also Livy package itself does not
 contain a Spark distribution, so it will work with any supported version of Spark (Spark 1.6+)
 without needing to rebuild against specific version of Spark.
+
+### Troubleshoot
+Hops build of Livy has been tested on Ubuntu 16.04 LTS. The following issues were encountered and were solved:
+
+- **R** installation needed to run tests for `repl`. Was fixed by following this [guide](https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-16-04-2)
+- **gssapi error**: Solved with `sudo apt-get install libkrb5-dev`
+- Error while testing **python-api**: Solved by doing `pip install --upgrade setuptools`
