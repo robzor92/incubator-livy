@@ -228,7 +228,7 @@ object LivyConf {
   val SPARK_JARS = "spark.jars"
   val SPARK_FILES = "spark.files"
   val SPARK_ARCHIVES = "spark.yarn.dist.archives"
-  val SPARK_PY_FILES = "spark.submit.pyFiles"
+  val SPARK_PY_FILES = "spark.yarn.dist.pyFiles"
   val SPARK_YARN_ARCHIVE = "spark.yarn.archive"
   val SPARK_YARN_DIST_FILES = "spark.yarn.dist.files"
   val SPARK_YARN_DIST_JARS = "spark.yarn.dist.jars"
