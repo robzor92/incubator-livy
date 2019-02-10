@@ -327,7 +327,7 @@ object InteractiveSession extends Logging {
     mergeConfList(pySparkFiles, LivyConf.SPARK_PY_FILES)
 
     val sparkPyFiles = conf.get(LivyConf.SPARK_YARN_DIST_PYFILES).map(_.split(",")).getOrElse(Array.empty[String])
-    mergeConfList(sparkPyFiles, LivyConf.SPARK_PY_FILES)
+    mergeConfList(sparkPyFiles, LivyConf.SPARK_YARN_DIST_PYFILES)
 
     val sparkRArchive = if (!LivyConf.TEST_MODE) findSparkRArchive() else None
     sparkRArchive.foreach { archive =>
